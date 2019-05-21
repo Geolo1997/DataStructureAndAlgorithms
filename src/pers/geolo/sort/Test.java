@@ -9,20 +9,21 @@ import java.util.Date;
  */
 public class Test {
     public static void main(String[] args) {
-        int[] originArray = getRandomArray(1000, 100);
+        // 生成随机数组
+        int[] originArray = getRandomArray(100000, 1000);
         System.out.print("原始数组为：");
         printArray(originArray);
-
+        // Arrays.sort排序结果
         int[] systemSortArray = originArray.clone();
         Date systemSortBeginTime = new Date();
         Arrays.sort(systemSortArray);
         Date systemSortEndTime = new Date();
         printArray(systemSortArray);
         System.out.println("系统排序时间：" + (systemSortEndTime.getTime() - systemSortBeginTime.getTime()));
-
+        // 我的排序算法结果
         int[] mySortArray = originArray.clone();
         Date mySortBeginTime = new Date();
-        QuickSort.quickSort(mySortArray);
+        HeapSort.heapSort(mySortArray);
         Date mySortEndTime = new Date();
         printArray(mySortArray);
         System.out.println("我的排序时间：" + (mySortEndTime.getTime() - mySortBeginTime.getTime()));
