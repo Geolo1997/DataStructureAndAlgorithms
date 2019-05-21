@@ -43,6 +43,9 @@ public class HeapSort {
         }
     }
 
+    /**
+     * 非递归实现
+     */
     private static void adjustHeap2(int[] array, int i, int length) {
         // 记录根节点
         int root = array[i];

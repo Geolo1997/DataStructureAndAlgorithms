@@ -10,7 +10,7 @@ import java.util.Date;
 public class Test {
     public static void main(String[] args) {
         // 生成随机数组
-        int[] originArray = getRandomArray(100000, 1000);
+        int[] originArray = getRandomArray(1000, 1000);
         System.out.print("原始数组为：");
         printArray(originArray);
         // Arrays.sort排序结果
@@ -23,7 +23,7 @@ public class Test {
         // 我的排序算法结果
         int[] mySortArray = originArray.clone();
         Date mySortBeginTime = new Date();
-        HeapSort.heapSort(mySortArray);
+        MergeSort.mergeSort(mySortArray);
         Date mySortEndTime = new Date();
         printArray(mySortArray);
         System.out.println("我的排序时间：" + (mySortEndTime.getTime() - mySortBeginTime.getTime()));

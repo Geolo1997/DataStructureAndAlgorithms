@@ -7,13 +7,6 @@ package pers.geolo.sort;
  * @date 2019-05-20
  */
 public class ShellSort {
-    public static void main(String[] args) {
-        int[] array = {6, 3, 7, 3, 8, 3, 33, 9, 23, 0, 43, 5};
-        shellSort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-    }
 
     public static void shellSort(int[] array) {
         // gap表示步长，每次减小为原来的1/2
