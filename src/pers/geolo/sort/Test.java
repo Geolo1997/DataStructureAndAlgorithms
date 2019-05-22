@@ -10,25 +10,25 @@ import java.util.Date;
 public class Test {
     public static void main(String[] args) {
         // 生成随机数组
-        int[] originArray = getRandomArray(1000, 1000);
+        int[] originArray = getRandomArray(1000000, 100000);
         System.out.print("原始数组为：");
-        printArray(originArray);
+//        printArray(originArray);
         // Arrays.sort排序结果
         int[] systemSortArray = originArray.clone();
         Date systemSortBeginTime = new Date();
         Arrays.sort(systemSortArray);
         Date systemSortEndTime = new Date();
-        printArray(systemSortArray);
+//        printArray(systemSortArray);
         System.out.println("系统排序时间：" + (systemSortEndTime.getTime() - systemSortBeginTime.getTime()));
         // 我的排序算法结果
         int[] mySortArray = originArray.clone();
         Date mySortBeginTime = new Date();
-        MergeSort.mergeSort(mySortArray);
+        RadixSort.RadixSort(mySortArray);
         Date mySortEndTime = new Date();
-        printArray(mySortArray);
+//        printArray(mySortArray);
         System.out.println("我的排序时间：" + (mySortEndTime.getTime() - mySortBeginTime.getTime()));
 
-        if (equals(systemSortArray,mySortArray)) {
+        if (equals(systemSortArray, mySortArray)) {
             System.out.println("算法正确！");
         } else {
             System.out.println("算法错误！");
@@ -47,7 +47,7 @@ public class Test {
     public static int[] getRandomArray(int length, int range) {
         int[] array = new int[length];
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * range);
+            array[i] = (int) (Math.random() * range) / 10;
         }
         return array;
     }
