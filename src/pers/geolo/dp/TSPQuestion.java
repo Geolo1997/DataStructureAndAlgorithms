@@ -1,11 +1,19 @@
 package pers.geolo.dp;
 
 /**
+ * TSP问题
+ *
  * @author 桀骜(Geolo)
  * @date 2019-06-23
  */
 public class TSPQuestion {
 
+    /**
+     * 获取一遍走完所有点再回到原点的最小代价
+     *
+     * @param distance 两点之间的代价，distance[i][j]表示从i到j的代价
+     * @return 一遍走完的最小代价
+     */
     public static int getMinDistance(int[][] distance) {
         // 点的数量
         final int pointNum = distance.length;
@@ -70,6 +78,7 @@ public class TSPQuestion {
 //            System.out.println();
 //        }
 
+        // 打印路径
         int point = 0, set = setNum - 1;
         while (true) {
             System.out.print(point + "->");
