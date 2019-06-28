@@ -9,8 +9,8 @@ package pers.geolo.dp;
 public class KnapsackProblem {
 
     public static void main(String[] args) {
-        int[] weight = {3, 4, 5};
-        int[] value = {4, 5, 6};
+        int[] weight = {2, 2, 6, 5, 4};
+        int[] value = {6, 3, 5, 4, 6};
         int capacity = 10;
         System.out.println(getMaxValue(weight, value, capacity));
     }
@@ -45,6 +45,14 @@ public class KnapsackProblem {
                     maxValue[i][j] = Math.max(maxValue[i - 1][j - weight[i - 1]] + value[i - 1], maxValue[i - 1][j]);
                 }
             }
+        }
+
+        // 打印maxValue
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= capacity; j++) {
+                System.out.print(maxValue[i][j] + "\t");
+            }
+            System.out.println();
         }
         return maxValue[n][capacity];
     }
