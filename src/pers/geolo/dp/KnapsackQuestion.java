@@ -6,7 +6,7 @@ package pers.geolo.dp;
  * @author 桀骜(Geolo)
  * @date 2019-06-24
  */
-public class KnapsackProblem {
+public class KnapsackQuestion {
 
     public static void main(String[] args) {
         int[] weight = {2, 2, 6, 5, 4};
